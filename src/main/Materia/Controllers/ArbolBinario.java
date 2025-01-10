@@ -46,7 +46,7 @@ public class ArbolBinario {
         
     }
 
-    /*public getRoot(){
-        
-    }*/
+    public Node getRoot(){
+        return root;
+    }
 }
