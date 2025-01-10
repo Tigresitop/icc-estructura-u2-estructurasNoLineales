@@ -42,9 +42,7 @@ public class App {
         ListLeves listLeves = new ListLeves();
         int[] valores = {4, 2, 7, 1, 3, 6, 9};
         
-        for (int valor : valores) {
-            arbolBinario.insert(valor);
-        }
+        
 
         System.out.println();
         System.out.println("Listas por Nivel:");
