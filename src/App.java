@@ -6,7 +6,7 @@ import main.Materia.Controllers.ArbolRecorridos;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        //runArbolBinario();
+        runArbolBinario();
         runEjercicio3();
     }
     
@@ -40,9 +40,11 @@ public class App {
     public static void runEjercicio3() {
         ArbolBinario arbolBinario = new ArbolBinario();
         ListLeves listLeves = new ListLeves();
-        int[] valores = {4, 2, 7, 1, 3, 6, 9};
+        int[] valores = {40, 20, 60, 10, 30, 50, 70, 5, 15, 55};
         
-        
+        for (int valor : valores) {
+            arbolBinario.insert(valor);
+        }
 
         System.out.println();
         System.out.println("Listas por Nivel:");
