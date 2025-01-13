@@ -1,13 +1,15 @@
-import java.util.List;
+
 
 import main.Ejercicio_03_listLeves.ListLeves;
+import main.Materia.Controllers.ArbolAVL;
 import main.Materia.Controllers.ArbolBinario;
 import main.Materia.Controllers.ArbolRecorridos;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runArbolBinario();
-        runEjercicio3();
+        //runArbolBinario();
+        //runEjercicio3();
+        runArbolAvl();
     }
     
     public static void runArbolBinario(){
@@ -49,5 +51,21 @@ public class App {
         System.out.println();
         System.out.println("Listas por Nivel:");
         listLeves.imprimirListasPorNivel(listLeves.ListLeves(arbolBinario.getRoot()));
+    }
+
+    public static void runArbolAvl() {
+        
+        int[] values = {15, 20, 10, 24, 9, 8, 21, 23, 50, 25};
+
+        ArbolAVL arbolAVL = new ArbolAVL();
+        
+        System.out.println("Insertando nodos en el árbol AVL...");
+
+        for (int value : values) {
+            arbolAVL.insert(value);
+        }
+
+        System.out.println("\nÁrbol AVL después de todas las inserciones:");
+        arbolAVL.printTree(arbolAVL.getRoot(), "", true);
     }
 }
