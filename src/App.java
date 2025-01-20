@@ -133,20 +133,90 @@ public class App {
     public static void runGraph() {
         
         Graph grafo = new Graph();
-        NodeG N5 = grafo.addNode(5);
-        NodeG N7 = grafo.addNode(7);
-        NodeG N9 = grafo.addNode(9);
-        NodeG N11 = grafo.addNode(11);
-        NodeG N3 = grafo.addNode(3);
+        //NodeG N5 = grafo.addNode(5);
+        //NodeG N7 = grafo.addNode(7);
+        //NodeG N9 = grafo.addNode(9);
+        //NodeG N11 = grafo.addNode(11);
+        //NodeG N3 = grafo.addNode(3);
 
-        grafo.addEdge(N5, N7);
-        grafo.addEdge(N5, N3);
-        grafo.addEdge(N7, N9);
-        grafo.addEdge(N9, N5);
-        grafo.addEdge(N9, N3);
-        grafo.addEdge(N3, N11);
+        //grafo.addEdge(N5, N7);
+        //grafo.addEdge(N5, N3);
+        //grafo.addEdge(N7, N9);
+        //grafo.addEdge(N9, N5);
+        //grafo.addEdge(N9, N3);
+        //grafo.addEdge(N3, N11);
+
+        //grafo.printGraph();
+
+        
+        
+
+        NodeG node0 = grafo.addNode(0);
+        NodeG node1 = grafo.addNode(1);
+        NodeG node2 = grafo.addNode(2);
+        NodeG node3 = grafo.addNode(3);
+        NodeG node4 = grafo.addNode(4);
+        NodeG node5 = grafo.addNode(5);
+        NodeG node6 = grafo.addNode(6);
+        NodeG node7 = grafo.addNode(7);
+
+        System.out.println("NO DIRECCIONAL:");
+        grafo.addEdge(node0, node3);
+        grafo.addEdge(node0, node5);
+        grafo.addEdge(node3, node2);
+        grafo.addEdge(node3, node4);
+        grafo.addEdge(node4, node1);
+        grafo.addEdge(node2, node1);
+        grafo.addEdge(node1, node0);
 
         grafo.printGraph();
+        System.out.println();
+
+        Graph grafo2 = new Graph();
+
+        NodeG g2node0 = grafo2.addNode(0);
+        NodeG g2node1 = grafo2.addNode(1);
+        NodeG g2node2 = grafo2.addNode(2);
+        NodeG g2node3 = grafo2.addNode(3);
+        NodeG g2node4 = grafo2.addNode(4);
+        NodeG g2node5 = grafo2.addNode(5);
+        
+
+        System.out.println("DIRECCIONAL:");
+        grafo.addEdgeUni(g2node0, g2node3);
+        grafo.addEdgeUni(g2node0, g2node5);
+        grafo.addEdgeUni(g2node3, g2node2);
+        grafo.addEdgeUni(g2node3, g2node4);
+        grafo.addEdgeUni(g2node4, g2node1);
+        grafo.addEdgeUni(g2node2, g2node1);
+        grafo.addEdgeUni(g2node1, g2node0);
+        
+        grafo2.printGraph();
+        System.out.println();
+
+        System.out.println("NO DIRECCIONAL:");
+        grafo.getDFS(node0);
+        grafo.getBFS(node0);
+        System.out.println();
+
+        System.out.println("\nDIRECCIONAL:");
+        grafo2.getDFS(g2node0);
+        grafo2.getBFS(g2node0);
+
+        // Agregar aristas
+        grafo.addEdge(node0, node3);
+        grafo.addEdge(node0, node5);
+        grafo.addEdge(node3, node2);
+        grafo.addEdge(node3, node4);
+        grafo.addEdge(node4, node1);
+        grafo.addEdge(node1, node7);
+    
+
+        System.out.println("Grafo:");
+        grafo.printGraph();
+        System.out.println();
+    
+        
 
         
     }
